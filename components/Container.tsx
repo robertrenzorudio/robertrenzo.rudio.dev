@@ -15,7 +15,7 @@ const Container: React.FC<Props> = ({ children }) => {
   };
 
   return (
-    <div>
+    <div className="bg-gray-100 dark:bg-nightowl">
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
@@ -34,7 +34,7 @@ const Container: React.FC<Props> = ({ children }) => {
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
       </Head>
-      <div className="flex flex-col justify-center px-8">
+      <div className="w-full">
         <Nav />
         <main>{children}</main>
         <Footer />
