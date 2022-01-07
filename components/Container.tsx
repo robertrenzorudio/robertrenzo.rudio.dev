@@ -15,9 +15,10 @@ const Container: React.FC<Props> = ({ children }) => {
   };
 
   return (
-    <div className="bg-gray-100 dark:bg-nightowl">
+    <div className="bg-gray-100 dark:bg-nightowl selection:bg-teal-250 dark:selection:bg-rose-500">
       <Head>
         <title>{meta.title}</title>
+        <link rel="icon" href="/favicon.png" />
         <meta name="robots" content="follow, index" />
         <meta content={meta.description} name="description" />
         <meta

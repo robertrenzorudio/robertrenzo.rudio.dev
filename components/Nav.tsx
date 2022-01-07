@@ -23,7 +23,7 @@ const Nav = (props: Props) => {
   const currTheme = theme === 'system' ? systemTheme : theme;
 
   return (
-    <nav className="max-w-2xl w-full mx-auto py-8 2xl:max-w-4xl">
+    <nav className="max-w-2xl w-full mx-auto py-8 2xl:max-w-4xl p-8 md:px-0">
       <div className="flex justify-between">
         <MobileMenu />
         <ul className="flex items-center space-x-6">

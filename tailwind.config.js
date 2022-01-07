@@ -9,7 +9,14 @@ module.exports = {
       display: ['IBM Plex Mono', 'Menlo', 'monospace'],
       body: ['IBM Plex Mono', 'Menlo', 'monospace'],
     },
-    extend: { colors: { nightowl: '#0a1929' } },
+    extend: {
+      colors: {
+        nightowl: '#0a1929',
+        teal: {
+          250: '#79ffe1',
+        },
+      },
+    },
   },
   plugins: [],
 };

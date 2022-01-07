@@ -1,12 +1,11 @@
 import type { NextPage } from 'next';
 import Container from '../components/Container';
+import Intro from '../components/Intro';
 
 const Home: NextPage = () => {
   return (
     <Container>
-      <div className="flex max-w-2xl w-full mx-auto items-center justify-center">
-        <p className="text-red">Hello World</p>
-      </div>
+      <Intro />
     </Container>
   );
 };

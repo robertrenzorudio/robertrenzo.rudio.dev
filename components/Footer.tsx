@@ -6,7 +6,7 @@ interface Props {}
 
 const Footer = (props: Props) => {
   return (
-    <footer className="flex flex-col max-w-2xl 2xl:max-w-4xl mx-auto w-full py-8 ">
+    <footer className="flex flex-col max-w-2xl 2xl:max-w-4xl mx-auto w-full p-8 md:px-0">
       <hr className="pb-8 border-1 border-gray-600"></hr>
 
       <div className="grid grid-cols-2">
