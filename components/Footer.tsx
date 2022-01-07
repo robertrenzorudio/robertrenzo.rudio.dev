@@ -38,6 +38,32 @@ const Footer = (props: Props) => {
           </a>
         </div>
       </div>
+      <p className="flex flex-row text-gray-600 mt-4 space-x-1">
+        Built with &nbsp;
+        <a
+          href="https://nextjs.org/"
+          rel="noopener noreferrer"
+          target="__blank"
+        >
+          <img src="/images/nextjs.png" className="h-6 w-6" />
+        </a>
+        &nbsp;
+        <a
+          href="https://www.typescriptlang.org/"
+          rel="noopener noreferrer"
+          target="__blank"
+        >
+          <img src="/images/typescript.png" className="h-6 w-6" />
+        </a>
+        &nbsp; and &nbsp;
+        <a
+          href="https://tailwindcss.com/"
+          rel="noopener noreferrer"
+          target="__blank"
+        >
+          <img src="/images/tailwindcss.svg" className="h-6 w-6" />
+        </a>
+      </p>
     </footer>
   );
 };

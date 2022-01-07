@@ -11,7 +11,7 @@ export const featuredProjects = [
   {
     name: 'GeographQL',
     description: 'A Country, State, and City GraphQL API.',
-    imgSrc: '/geographql.svg',
+    imgSrc: '/images/geographql.svg',
     imgAlt: 'GeographQL Image',
     links: {
       repo: 'https://github.com/robertrenzorudio/geographql',
@@ -29,7 +29,7 @@ export const featuredProjects = [
   {
     name: 'NightLight',
     description: 'An IoT security camera device.',
-    imgSrc: '/nightlight.svg',
+    imgSrc: '/images/nightlight.svg',
     imgAlt: 'NightLight Image',
     links: {
       repo: 'https://github.com/robertrenzorudio/nightlight',
@@ -39,7 +39,7 @@ export const featuredProjects = [
   {
     name: 'ReactShop',
     description: 'A simple e-commerce web app.',
-    imgSrc: '/reactshop.svg',
+    imgSrc: '/images/reactshop.svg',
     imgAlt: 'NightLight Image',
     links: {
       repo: 'https://github.com/robertrenzorudio/react-shop',
