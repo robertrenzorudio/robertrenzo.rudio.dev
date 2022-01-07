@@ -6,3 +6,45 @@ export const userData = {
     linkedin: 'https://linkedin.com/in/robertrenzorudio',
   },
 };
+
+export const featuredProjects = [
+  {
+    name: 'GeographQL',
+    description: 'A Country, State, and City GraphQL API.',
+    imgSrc: '/geographql.svg',
+    imgAlt: 'GeographQL Image',
+    links: {
+      repo: 'https://github.com/robertrenzorudio/geographql',
+      website: 'https://geographql.netlify.app',
+    },
+    techStack: [
+      'Typescript',
+      'GraphQL',
+      'PostgreSQL',
+      'Prisma',
+      'Redis',
+      'Docker',
+    ],
+  },
+  {
+    name: 'NightLight',
+    description: 'An IoT security camera device.',
+    imgSrc: '/nightlight.svg',
+    imgAlt: 'NightLight Image',
+    links: {
+      repo: 'https://github.com/robertrenzorudio/nightlight',
+    },
+    techStack: ['Python', 'AWS EC2/S3/RDS', 'Raspberry Pi'],
+  },
+  {
+    name: 'ReactShop',
+    description: 'A simple e-commerce web app.',
+    imgSrc: '/reactshop.svg',
+    imgAlt: 'NightLight Image',
+    links: {
+      repo: 'https://github.com/robertrenzorudio/react-shop',
+      website: 'https://react-shop-tau.vercel.app',
+    },
+    techStack: ['React', 'Typescript', 'Prisma'],
+  },
+];

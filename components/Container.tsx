@@ -35,7 +35,7 @@ const Container: React.FC<Props> = ({ children }) => {
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
       </Head>
-      <div className="w-full">
+      <div className="w-full flex-col min-h-screen ">
         <Nav />
         <main>{children}</main>
         <Footer />

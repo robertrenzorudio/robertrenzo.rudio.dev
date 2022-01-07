@@ -10,7 +10,7 @@ const Footer = (props: Props) => {
       <hr className="pb-8 border-1 border-gray-600"></hr>
 
       <div className="grid grid-cols-2">
-        <div className="flex flex-col space-y-4 text-center">
+        <div className="flex flex-col space-y-4 ">
           <Link href="/">
             <a className="text-gray-600 hover:text-gray-800">Home</a>
           </Link>
@@ -18,7 +18,7 @@ const Footer = (props: Props) => {
             <a className="text-gray-600 hover:text-gray-800">Projects</a>
           </Link>
         </div>
-        <div className="flex flex-col space-y-4 text-center overflow-scroll">
+        <div className="flex flex-col space-y-4 overflow-scroll">
           <a
             href={userData.socialLinks.github}
             target="_blank"
