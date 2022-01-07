@@ -21,12 +21,8 @@ const Intro = (props: Props) => {
           >
             UCLA
           </a>{' '}
-          with a degree in Computer Engineering. Blah Blah Blah....
+          with a degree in Computer Engineering.
         </p>
-
-        <h5 className="text-lg underline underline-offset-4 font-light">
-          robertrenzorudio@gmail.com
-        </h5>
       </div>
     </div>
   );

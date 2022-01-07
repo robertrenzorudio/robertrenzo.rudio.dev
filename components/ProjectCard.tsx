@@ -45,7 +45,7 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <div className="flex flex-col bg-gray-200 dark:bg-gray-900 p-6 border border-gray-900 dark:border-gray-100 rounded-lg  md:w-1/2 md:h-64 flex-none justify-between">
-      <div className="flex flex-row justify-between overflow-hidden">
+      <div className="flex flex-row justify-between overflow-hidden mb-3">
         <div>
           <h5 className="text-xl font-bold text-gray-900 dark:text-gray-100">
             {name}
@@ -59,11 +59,11 @@ const ProjectCard = ({
           <Image src={imgSrc} alt={imgAlt} layout="fill" />
         </div>
       </div>
-      <div className="flex flex-row space-x-2 overflow-auto md:mt-0 mt-3 flex-wrap space-between">
+      <div className="flex space-x-2 overflow-auto flex-wrap space-between -mt-2">
         {techStack.map((tech) => (
           <h5
             key={tech}
-            className="bg-gray-300 dark:bg-gray-800 italic text-sm"
+            className="bg-gray-300 dark:bg-gray-800 italic text-sm mt-2"
           >
             {tech}
           </h5>
