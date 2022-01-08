@@ -10,7 +10,6 @@ const Intro = (props: Props) => {
           Hey there 👋 <br />
           I&apos;m <span className="font-extrabold">Robert Renzo Rudio</span>
         </h1>
-
         <p className="text-lg font-light">
           I am a recent graduate from{' '}
           <a
@@ -21,7 +20,9 @@ const Intro = (props: Props) => {
           >
             UCLA
           </a>{' '}
-          with a degree in Computer Engineering.
+          with a bachelor&apos;s degree in computer engineering in December
+          2021. I am interested in full-stack, back-end, and embedded software
+          development.
         </p>
       </div>
     </div>
