@@ -65,7 +65,7 @@ const ProjectCard = ({
           ))}
         </div>
         <div className="flex space-x-2 mt-3 flex-wrap -ml-2">
-          <Action link={links.repo} linkType="Repo" icon={CodeIcon} />
+          <Action link={links.repo} linkType="Code" icon={CodeIcon} />
           {links.website && (
             <Action link={links.website} linkType="Website" icon={GlobeIcon} />
           )}

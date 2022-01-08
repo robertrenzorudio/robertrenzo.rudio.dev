@@ -18,7 +18,6 @@ export const featuredProjects = [
     links: {
       repo: 'https://github.com/robertrenzorudio/geographql',
       website: 'https://geographql.netlify.app',
-      read: '/',
     },
     techStack: [
       'Typescript',
