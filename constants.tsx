@@ -10,12 +10,15 @@ export const userData = {
 export const featuredProjects = [
   {
     name: 'GeographQL',
-    description: 'A Country, State, and City GraphQL API.',
+    description:
+      'A country, state, and city GraphQL API. It features cursor-based pagination ' +
+      'that follows the GraphQL cursor connection specification and rate limiting',
     imgSrc: '/images/geographql.svg',
     imgAlt: 'GeographQL Image',
     links: {
       repo: 'https://github.com/robertrenzorudio/geographql',
       website: 'https://geographql.netlify.app',
+      read: '/',
     },
     techStack: [
       'Typescript',
@@ -28,7 +31,10 @@ export const featuredProjects = [
   },
   {
     name: 'NightLight',
-    description: 'An IoT security camera device.',
+    description:
+      'A system design capstone group project where we built an IoT security camera device. ' +
+      'It features noise/movement detection, voice commands, notification system, cloud storage' +
+      'and a GUI',
     imgSrc: '/images/nightlight.svg',
     imgAlt: 'NightLight Image',
     links: {

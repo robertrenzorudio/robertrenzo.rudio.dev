@@ -27,7 +27,7 @@ const Action = (props: ActionsProp) => {
       href={props.link}
       target="_blank"
       rel="noopener noreferrer"
-      className="h-9 rounded-lg flex items-center justify-center hover:ring-2 ring-rose-500 transition-all p-1"
+      className="h-9 rounded-lg flex items-center justify-center hover:ring-2 ring-rose-500 transition-all p-1 ml-2"
     >
       <props.icon className="w-5 h-5 text-gray-800 dark:text-gray-100" />
       <h5 className="text-sm ml-1">{props.linkType}</h5>
@@ -44,43 +44,43 @@ const ProjectCard = ({
   techStack,
 }: ProjectCardProps) => {
   return (
-    <div className="flex flex-col bg-gray-200 dark:bg-gray-900 p-6 border border-gray-900 dark:border-gray-100 rounded-lg  md:w-1/2 md:h-64 flex-none justify-between">
-      <div className="flex flex-row justify-between overflow-hidden mb-3">
-        <div>
-          <h5 className="text-xl font-bold text-gray-900 dark:text-gray-100">
+    <div className="flex flex-row bg-gray-200 dark:bg-gray-900 p-6 border border-gray-900 dark:border-gray-100 rounded-lg w-full md:w-11/12 mx-auto space-x-1">
+      <div className="flex flex-col justify-between overflow-hidden w-full md:w-4/5 p-1">
+        <div className="mb-3">
+          <h5 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">
             {name}
           </h5>
           <p className="text-sm text-gray-900 dark:text-gray-100">
             {description}
           </p>
         </div>
-
-        <div className="hidden sm:block md:flex w-1/2 relative">
-          <Image src={imgSrc} alt={imgAlt} layout="fill" />
+        <div className="flex space-x-2 flex-wrap space-between -mt-1 -ml-2">
+          {techStack.map((tech) => (
+            <h5
+              key={tech}
+              className="bg-gray-300 dark:bg-gray-800 italic text-sm mt-1 ml-2"
+            >
+              {tech}
+            </h5>
+          ))}
+        </div>
+        <div className="flex space-x-2 mt-3 flex-wrap -ml-2">
+          <Action link={links.repo} linkType="Repo" icon={CodeIcon} />
+          {links.website && (
+            <Action link={links.website} linkType="Website" icon={GlobeIcon} />
+          )}
+          {links.read && (
+            <Action
+              link={links.read}
+              linkType="Read More"
+              icon={ArrowNarrowRightIcon}
+            />
+          )}
         </div>
       </div>
-      <div className="flex space-x-2 overflow-auto flex-wrap space-between -mt-2">
-        {techStack.map((tech) => (
-          <h5
-            key={tech}
-            className="bg-gray-300 dark:bg-gray-800 italic text-sm mt-2"
-          >
-            {tech}
-          </h5>
-        ))}
-      </div>
-      <div className="flex space-x-2 md:mt-0 mt-3 flex-wrap">
-        <Action link={links.repo} linkType="Repo" icon={CodeIcon} />
-        {links.website && (
-          <Action link={links.website} linkType="Website" icon={GlobeIcon} />
-        )}
-        {links.read && (
-          <Action
-            link={links.read}
-            linkType="Read More"
-            icon={ArrowNarrowRightIcon}
-          />
-        )}
+
+      <div className="hidden sm:block md:flex w-1/5 relative">
+        <Image src={imgSrc} alt={imgAlt} layout="fill" />
       </div>
     </div>
   );
