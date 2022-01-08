@@ -9,7 +9,6 @@ const Home: NextPage = () => {
     <Container>
       <Intro />
       <FeatuedProjects />
-      <Contact />
     </Container>
   );
 };
