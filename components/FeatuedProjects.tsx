@@ -10,13 +10,12 @@ const FeatuedProjects = (props: Props) => {
       <h1 className="text-3xl font-extrabold">Featured Projects</h1>
       <div className="flex flex-col space-y-6 pb-4">
         {featuredProjects.map(
-          ({ name, description, imgSrc, imgAlt, techStack, links }) => (
+          ({ name, description, imgSrc, techStack, links }) => (
             <ProjectCard
               key={name}
               name={name}
               description={description}
               imgSrc={imgSrc}
-              imgAlt={imgAlt}
               techStack={techStack}
               links={links}
             />

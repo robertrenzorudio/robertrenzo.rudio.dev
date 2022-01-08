@@ -1,3 +1,5 @@
+import { CodeIcon, GlobeIcon } from '@heroicons/react/outline';
+
 export const userData = {
   name: 'Robert Renzo Rudio',
   email: 'robertrenzorudio@gmail.com',
@@ -7,18 +9,37 @@ export const userData = {
   },
 };
 
-export const featuredProjects = [
+type Project = {
+  name: string;
+  description: string;
+  imgSrc?: string;
+  techStack: string[];
+  links: {
+    link: string;
+    linkName: string;
+    icon: (props: React.ComponentProps<'svg'>) => JSX.Element;
+  }[];
+};
+
+export const featuredProjects: Project[] = [
   {
     name: 'GeographQL',
     description:
       'A country, state, and city GraphQL API. It features cursor-based pagination ' +
-      'that follows the GraphQL cursor connection specification and rate limiting',
+      'that follows the GraphQL cursor connection specification and rate limiting.',
     imgSrc: '/images/geographql.svg',
-    imgAlt: 'GeographQL Image',
-    links: {
-      repo: 'https://github.com/robertrenzorudio/geographql',
-      website: 'https://geographql.netlify.app',
-    },
+    links: [
+      {
+        link: 'https://github.com/robertrenzorudio/geographql',
+        linkName: 'Repo',
+        icon: CodeIcon,
+      },
+      {
+        link: 'https://geographql.netlify.app',
+        linkName: 'Website',
+        icon: GlobeIcon,
+      },
+    ],
     techStack: [
       'Typescript',
       'GraphQL',
@@ -32,24 +53,36 @@ export const featuredProjects = [
     name: 'NightLight',
     description:
       'A system design capstone group project where we built an IoT security camera device. ' +
-      'It features noise/movement detection, voice commands, notification system, cloud storage' +
-      'and a GUI',
+      'It features noise/movement detection, voice commands, notification system, cloud storage ' +
+      'and a GUI.',
     imgSrc: '/images/nightlight.svg',
-    imgAlt: 'NightLight Image',
-    links: {
-      repo: 'https://github.com/robertrenzorudio/nightlight',
-    },
+    links: [
+      {
+        link: 'https://github.com/robertrenzorudio/nightlight',
+        linkName: 'Repo',
+        icon: CodeIcon,
+      },
+    ],
     techStack: ['Python', 'AWS EC2/S3/RDS', 'Raspberry Pi'],
   },
   {
     name: 'ReactShop',
     description: 'A simple e-commerce web app.',
     imgSrc: '/images/reactshop.svg',
-    imgAlt: 'NightLight Image',
-    links: {
-      repo: 'https://github.com/robertrenzorudio/react-shop',
-      website: 'https://react-shop-tau.vercel.app',
-    },
+    links: [
+      {
+        link: 'https://github.com/robertrenzorudio/react-shop',
+        linkName: 'Repo',
+        icon: CodeIcon,
+      },
+      {
+        link: 'https://react-shop-tau.vercel.app',
+        linkName: 'Website',
+        icon: GlobeIcon,
+      },
+    ],
     techStack: ['React', 'Typescript', 'Prisma'],
   },
 ];
+
+export const projects: Project[] = [...featuredProjects];

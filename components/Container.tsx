@@ -3,15 +3,18 @@ import { useRouter } from 'next/router';
 import Footer from './Footer';
 import Nav from './Nav';
 
-interface Props {}
+interface Props {
+  meta?: { [key: string]: string };
+}
 
-const Container: React.FC<Props> = ({ children }) => {
+const Container: React.FC<Props> = ({ children, meta: cMeta }) => {
   const router = useRouter();
   const meta = {
     title: 'Robert Renzo Rudio',
     description: 'Back-end developer',
     image: '/favicon.ico',
     type: 'website',
+    ...cMeta,
   };
 
   return (
