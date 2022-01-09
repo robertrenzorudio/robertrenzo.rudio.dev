@@ -55,8 +55,8 @@ const Contact = (props: Props) => {
               />
             </div>
           </div>
-          <button className="p-2 bg-transparent border border-rose-500 text-rose-500 text-md rounded-md hover:bg-rose-500/20 w-1/5 self-end">
-            Success
+          <button className="p-2 bg-transparent border border-rose-500 text-rose-500 text-md rounded-md hover:bg-rose-500/20 flex-1 self-end">
+            Send
           </button>
         </Form>
       </Formik>
