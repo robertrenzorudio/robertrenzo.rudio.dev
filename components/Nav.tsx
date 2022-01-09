@@ -1,8 +1,7 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import MobileMenu from './MobileMenu';
 import NavItem from './NavItem';
 import { userData } from '../constants';
-import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 
 interface Props {}
@@ -23,7 +22,7 @@ const Nav = (props: Props) => {
   const currTheme = theme === 'system' ? systemTheme : theme;
 
   return (
-    <nav className="max-w-2xl w-full mx-auto py-8 2xl:max-w-4xl p-8 md:px-0">
+    <nav className="max-w-3xl w-full mx-auto 2xl:max-w-5xl py-4 px-8 md:px-0 sticky top-0 backdrop-blur-lg z-10">
       <div className="flex justify-between">
         <MobileMenu />
         <ul className="flex items-center space-x-6">
