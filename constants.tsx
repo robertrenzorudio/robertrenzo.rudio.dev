@@ -19,9 +19,10 @@ type Project = {
     linkName: string;
     icon: (props: React.ComponentProps<'svg'>) => JSX.Element;
   }[];
+  isFeatured: boolean;
 };
 
-export const featuredProjects: Project[] = [
+export const projects: Project[] = [
   {
     name: 'GeographQL',
     description:
@@ -48,6 +49,7 @@ export const featuredProjects: Project[] = [
       'Redis',
       'Docker',
     ],
+    isFeatured: true,
   },
   {
     name: 'NightLight',
@@ -64,6 +66,7 @@ export const featuredProjects: Project[] = [
       },
     ],
     techStack: ['Python', 'AWS EC2/S3/RDS', 'Raspberry Pi'],
+    isFeatured: true,
   },
   {
     name: 'ReactShop',
@@ -82,7 +85,6 @@ export const featuredProjects: Project[] = [
       },
     ],
     techStack: ['React', 'Typescript', 'Prisma'],
+    isFeatured: true,
   },
 ];
-
-export const projects: Project[] = [...featuredProjects];

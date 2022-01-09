@@ -1,10 +1,5 @@
 import Image from 'next/image';
 import React from 'react';
-import {
-  CodeIcon,
-  GlobeIcon,
-  ArrowNarrowRightIcon,
-} from '@heroicons/react/outline';
 
 interface ProjectCardProps {
   name: string;
@@ -16,6 +11,7 @@ interface ProjectCardProps {
     linkName: string;
     icon: (props: React.ComponentProps<'svg'>) => JSX.Element;
   }[];
+  isFeatured: boolean;
 }
 
 interface ActionsProp {
