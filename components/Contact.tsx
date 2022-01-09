@@ -34,16 +34,16 @@ const Contact = (props: Props) => {
       >
         {() => (
           <Form className="flex flex-col w-11/12 self-center bg-blue-50 dark:bg-nightowl-200 p-8 border rounded-md border-blue-200 space-y-6">
-            <h2 className="text-lg font-medium text-gray-800 dark:text-gray-200 ">
-              You can send me an email @{' '}
+            <p className="text-sm md:text-lg font-medium text-gray-800 dark:text-gray-200 break-words">
+              Best way to reach me is by sending an email @{' '}
               <a
                 className="font-bold underline underline-offset-2"
                 href={`mailto:${userData.email}`}
               >
                 {userData.email}
               </a>
-              &nbsp;or you can also send me an email here.
-            </h2>
+              &nbsp;or you can write one here.
+            </p>
             <div className="grid grid-cols-6 gap-6">
               <div className="col-span-6 md:col-span-3">
                 <Input
