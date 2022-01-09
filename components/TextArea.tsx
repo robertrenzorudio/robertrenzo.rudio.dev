@@ -7,7 +7,8 @@ type Props = TextareaHTMLAttributes<HTMLTextAreaElement> & {
 };
 
 const TextArea = ({ label, ...props }: Props) => {
-  const [field] = useField(props);
+  const [field, meta] = useField(props);
+  const error = meta.error && meta.touched;
 
   return (
     <>
@@ -18,10 +19,17 @@ const TextArea = ({ label, ...props }: Props) => {
         {label}
       </label>
       <textarea
-        className="shadow-sm focus:ring-rose-500 focus:border-rose-500 mt-1 block w-full sm:text-sm border border-gray-100 rounded-md bg-gray-100 dark:bg-nightowl-100"
+        className={`shadow-sm ${
+          error && 'focus:ring-rose-500 focus:border-rose-500'
+        } mt-1 block w-full sm:text-sm border border-gray-300 rounded-md bg-gray-100 dark:bg-nightowl-100`}
         {...field}
         {...props}
       />
+      {error && (
+        <p className="block mt-1 text-sm font-medium text-rose-500">
+          {meta.error}
+        </p>
+      )}
     </>
   );
 };

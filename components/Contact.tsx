@@ -2,8 +2,20 @@ import { Form, Formik } from 'formik';
 import React from 'react';
 import Input from './Input';
 import TextArea from './TextArea';
+import * as Yup from 'yup';
+import { userData } from '../constants';
 
 interface Props {}
+
+const EmailSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(2, 'Too Short!')
+    .max(100, 'Too Long!')
+    .required('Required'),
+  email: Yup.string().email('Invalid Email').required('Required'),
+  subject: Yup.string().min(2, 'Too Short!').max(100, 'Too Long!'),
+  message: Yup.string().required('Required!'),
+});
 
 const Contact = (props: Props) => {
   return (
@@ -15,50 +27,69 @@ const Contact = (props: Props) => {
           email: '',
           message: '',
         }}
+        validationSchema={EmailSchema}
         onSubmit={async (values) => {
           await new Promise((r) => setTimeout(r, 500));
-          alert(JSON.stringify(values, null, 2));
         }}
       >
-        <Form className="flex flex-col w-11/12 self-center bg-blue-50 dark:bg-nightowl-200 p-8 border rounded-md border-blue-200 space-y-6">
-          <h2 className="text-md font-medium text-gray-800 dark:text-gray-200 ">
-            You can also send me an email here.
-          </h2>
-          <div className="grid grid-cols-6 gap-6">
-            <div className="col-span-6 md:col-span-3">
-              <Input
-                id="name"
-                label="Name"
-                name="name"
-                type="text"
-                placeholder="John Doe"
-              />
-            </div>
+        {() => (
+          <Form className="flex flex-col w-11/12 self-center bg-blue-50 dark:bg-nightowl-200 p-8 border rounded-md border-blue-200 space-y-6">
+            <h2 className="text-lg font-medium text-gray-800 dark:text-gray-200 ">
+              You can send me an email @{' '}
+              <a
+                className="font-bold underline underline-offset-2"
+                href={`mailto:${userData.email}`}
+              >
+                {userData.email}
+              </a>
+              &nbsp;or you can also send me an email here.
+            </h2>
+            <div className="grid grid-cols-6 gap-6">
+              <div className="col-span-6 md:col-span-3">
+                <Input
+                  id="name"
+                  label="Name"
+                  name="name"
+                  type="text"
+                  placeholder="John Doe"
+                />
+              </div>
 
-            <div className="col-span-6 md:col-span-3">
-              <Input
-                id="email"
-                label="Email"
-                name="email"
-                type="email"
-                placeholder="john@doe.tld"
-              />
-            </div>
+              <div className="col-span-6 md:col-span-3">
+                <Input
+                  id="email"
+                  label="Email"
+                  name="email"
+                  type="email"
+                  placeholder="john@doe.tld"
+                />
+              </div>
 
-            <div className="col-span-6">
-              <TextArea
-                id="message"
-                label="Message"
-                name="message"
-                rows={6}
-                placeholder="Hey there 👋"
-              />
+              <div className="col-span-6">
+                <Input
+                  id="subject"
+                  label="Subject"
+                  name="subject"
+                  type="text"
+                  placeholder="I like Linear Algebra"
+                />
+              </div>
+
+              <div className="col-span-6">
+                <TextArea
+                  id="message"
+                  label="Message"
+                  name="message"
+                  rows={6}
+                  placeholder="Hey there 👋"
+                />
+              </div>
             </div>
-          </div>
-          <button className="p-2 bg-transparent border border-rose-500 text-rose-500 text-md rounded-md hover:bg-rose-500/20 flex-1 self-end">
-            Send
-          </button>
-        </Form>
+            <button className="p-2 bg-transparent border border-rose-500 text-rose-500 text-md rounded-md hover:bg-rose-500/20 flex-1 disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 self-end">
+              Send
+            </button>
+          </Form>
+        )}
       </Formik>
     </div>
   );
