@@ -12,12 +12,12 @@ module.exports = {
     },
     extend: {
       colors: {
-        nightowl: '#0a1929',
+        nightowl: { 100: '#0a192f', 200: '#0d1928' },
         teal: {
-          250: '#79ffe1',
+          250: '#64ffda',
         },
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 };

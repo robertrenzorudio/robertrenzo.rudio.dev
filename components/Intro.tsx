@@ -4,7 +4,7 @@ interface Props {}
 
 const Intro = (props: Props) => {
   return (
-    <div className="flex justify-between max-w-2xl mx-auto px-8 md:px-0 2xl:max-w-4xl">
+    <div className="flex justify-between max-w-2xl mx-auto px-8 md:px-0 2xl:max-w-4xl pt-4">
       <div className="w-4/5 space-y-6">
         <h1 className="text-3xl font-medium text-gray-800 dark:text-gray-100">
           Hey there 👋 <br />

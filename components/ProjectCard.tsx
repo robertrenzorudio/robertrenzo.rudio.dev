@@ -42,7 +42,7 @@ const ProjectCard = ({
   techStack,
 }: ProjectCardProps) => {
   return (
-    <div className="flex flex-row bg-gray-200 dark:bg-gray-900 p-6 border border-gray-900 dark:border-gray-100 rounded-lg w-full md:w-11/12 mx-auto space-x-1">
+    <div className="flex flex-row bg-gray-200 dark:bg-gray-900 p-6 border border-gray-900 dark:border-gray-100 rounded-lg w-full  mx-auto space-x-1">
       <div
         className={`flex flex-col justify-between overflow-hidden w-full ${
           imgSrc ? 'md:w-4/5' : ''
