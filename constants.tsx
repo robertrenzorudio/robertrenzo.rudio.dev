@@ -2,7 +2,7 @@ import { CodeIcon, GlobeIcon } from '@heroicons/react/outline';
 
 export const userData = {
   name: 'Robert Renzo Rudio',
-  email: 'robertrenzorudio@gmail.com',
+  email: 'robertrenzo@rudio.dev',
   socialLinks: {
     github: 'https://github.com/robertrenzorudio',
     linkedin: 'https://linkedin.com/in/robertrenzorudio',
