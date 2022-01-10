@@ -26,8 +26,8 @@ export default async function handler(
 
     subject = subject || 'No subject';
     const msg = {
-      to: process.env.SENDGRID_TO!,
       from: process.env.SENDGRID_FROM!,
+      to: process.env.SENDGRID_TO!,
       subject: 'From Website: ' + subject,
       replyTo: email,
       text: message,
@@ -38,7 +38,8 @@ export default async function handler(
       return res.status(200).json({ message: 'Email sent successfully' });
     } catch (err) {
       return res.status(500).json({
-        message: 'An error occured while sending the email.',
+        message:
+          'An error occured while sending the email. Please send an email directly or try again later.',
       });
     }
   } else {

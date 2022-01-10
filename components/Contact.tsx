@@ -40,11 +40,18 @@ const Contact = (props: Props) => {
                 },
               });
 
+              const reset = res.ok;
               const data = await res.json();
-              actions.setSubmitting;
+              actions.setSubmitting(false);
+
+              if (reset) {
+                actions.resetForm();
+              }
               alert(data.message);
             } catch (err) {
-              alert('An error occured while sending the email.');
+              alert(
+                'An error occured while sending the email. Please send an email directly or try again later.'
+              );
               actions.setSubmitting(false);
             }
           }}
