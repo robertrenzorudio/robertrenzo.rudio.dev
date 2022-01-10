@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { userData } from '../constants';
+import Image from 'next/image';
 
 interface Props {}
 
@@ -38,32 +39,42 @@ const Footer = (props: Props) => {
           </a>
         </div>
       </div>
-      <p className="flex flex-row text-gray-600 mt-4 space-x-1">
-        Built with &nbsp;
+      <div className="flex space-x-2 relative items-center mt-4">
+        <p className="text-gray-600">Built with</p>
         <a
           href="https://nextjs.org/"
           rel="noopener noreferrer"
           target="__blank"
+          className="relative w-6 h-6"
         >
-          <img src="/images/nextjs.png" className="h-6 w-6" />
+          <Image src="/images/nextjs.png" layout="fill" alt="Nextjs Logo" />
         </a>
-        &nbsp;
         <a
-          href="https://www.typescriptlang.org/"
+          href="https://nextjs.org/"
           rel="noopener noreferrer"
           target="__blank"
+          className="relative w-6 h-6"
         >
-          <img src="/images/typescript.png" className="h-6 w-6" />
+          <Image
+            src="/images/typescript.png"
+            layout="fill"
+            alt="TypeScript Logo"
+          />
         </a>
-        &nbsp; and &nbsp;
+        <p className="text-gray-600">and</p>
         <a
-          href="https://tailwindcss.com/"
+          href="https://nextjs.org/"
           rel="noopener noreferrer"
           target="__blank"
+          className="relative w-6 h-6"
         >
-          <img src="/images/tailwindcss.svg" className="h-6 w-6" />
+          <Image
+            src="/images/tailwindcss.svg"
+            layout="fill"
+            alt="Tailwindcss Logo"
+          />
         </a>
-      </p>
+      </div>
     </footer>
   );
 };
