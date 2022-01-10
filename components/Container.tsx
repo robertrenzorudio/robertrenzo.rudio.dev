@@ -24,14 +24,8 @@ const Container: React.FC<Props> = ({ children, meta: cMeta }) => {
         <link rel="icon" href="/favicon.png" />
         <meta name="robots" content="follow, index" />
         <meta content={meta.description} name="description" />
-        <meta
-          property="og:url"
-          content={`https://robertrenzorudio.dev${router.asPath}`}
-        />
-        <link
-          rel="canonical"
-          href={`https://robertrenzorudio.dev${router.asPath}`}
-        />
+        <meta property="og:url" content={`https://rudio.dev${router.asPath}`} />
+        <link rel="canonical" href={`https://rudio.dev${router.asPath}`} />
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="Robert Renzo Rudio" />
         <meta property="og:description" content={meta.description} />
