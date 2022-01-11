@@ -1,17 +1,21 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import MobileMenu from './MobileMenu';
 import NavItem from './NavItem';
 import { userData } from '../constants';
 import { useTheme } from 'next-themes';
+import { MenuIcon } from '@heroicons/react/outline';
 
-interface Props {}
+interface Props {
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
 const navItems = [
   { href: '/', name: 'Home' },
   { href: '/projects', name: 'Projects' },
+  { href: '/contact', name: 'Contact' },
 ];
 
-const Nav = (props: Props) => {
+const Nav = ({ isOpen, setIsOpen }: Props) => {
   const { systemTheme, theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -23,8 +27,16 @@ const Nav = (props: Props) => {
 
   return (
     <nav className="max-w-3xl w-full mx-auto 2xl:max-w-5xl py-4 px-8 md:px-0 sticky top-0 backdrop-blur-lg z-10">
-      <div className="flex justify-between">
-        <MobileMenu />
+      <div className="flex justify-between items-center">
+        <button
+          aria-label="Toggle Dark Mode"
+          type="button"
+          className={`w-9 h-9 rounded-lg flex items-center md:hidden`}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <MenuIcon className="w-4/5 h-4/5 text-gray-800 dark:text-gray-100" />
+        </button>
+
         <ul className="flex items-center space-x-6">
           {navItems.map(({ href, name }) => (
             <Fragment key={name}>
