@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import Drawer from './Drawer';
 import Footer from './Footer';
 import Nav from './Nav';
+import { useState } from 'react';
 
 interface Props {
   meta?: { [key: string]: string };
@@ -16,6 +18,8 @@ const Container: React.FC<Props> = ({ children, meta: cMeta }) => {
     type: 'website',
     ...cMeta,
   };
+
+  const [drawerIsOpen, setDrawerIsOpen] = useState(false);
 
   return (
     <div className="bg-gray-100 dark:bg-nightowl-100 selection:bg-teal-250 dark:selection:bg-rose-500">
@@ -33,7 +37,8 @@ const Container: React.FC<Props> = ({ children, meta: cMeta }) => {
         <meta property="og:image" content={meta.image} />
       </Head>
       <div className="w-full flex-col min-h-screen ">
-        <Nav />
+        <Drawer isOpen={drawerIsOpen} setIsOpen={setDrawerIsOpen} />
+        <Nav isOpen={drawerIsOpen} setIsOpen={setDrawerIsOpen} />
         <main>{children}</main>
         <Footer />
       </div>

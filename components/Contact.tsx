@@ -5,7 +5,9 @@ import TextArea from './TextArea';
 import * as Yup from 'yup';
 import { userData } from '../constants';
 
-interface Props {}
+interface Props {
+  isFull?: boolean;
+}
 
 const EmailSchema = Yup.object().shape({
   name: Yup.string()
@@ -17,10 +19,13 @@ const EmailSchema = Yup.object().shape({
   message: Yup.string().required('Required!'),
 });
 
-const Contact = (props: Props) => {
+const Contact = ({ isFull }: Props) => {
   return (
     <>
-      <div className="flex flex-col max-w-2xl 2xl:max-w-4xl mx-auto w-full md:px-0 space-y-3 p-4 px-8">
+      <div
+        id="contact"
+        className="flex flex-col max-w-2xl 2xl:max-w-4xl mx-auto w-full md:px-0 space-y-3 p-4 px-8"
+      >
         <h1 className="text-3xl font-extrabold">Contact</h1>
         <Formik
           initialValues={{
@@ -57,7 +62,11 @@ const Contact = (props: Props) => {
           }}
         >
           {({ isSubmitting }) => (
-            <Form className="flex flex-col w-11/12 self-center bg-blue-50 dark:bg-nightowl-200 p-8 border rounded-md border-blue-200 space-y-6">
+            <Form
+              className={`flex flex-col ${
+                isFull ? 'w-full' : 'w-11/12'
+              } self-center bg-blue-50 dark:bg-nightowl-200 p-8 border rounded-md border-blue-200 space-y-6`}
+            >
               <p className="text-sm md:text-lg font-medium text-gray-800 dark:text-gray-200 break-words">
                 Best way to reach me is by sending an email @{' '}
                 <a
