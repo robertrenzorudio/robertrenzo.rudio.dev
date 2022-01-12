@@ -63,11 +63,11 @@ const Contact = ({ isFull }: Props) => {
         >
           {({ isSubmitting }) => (
             <Form
-              className={`flex flex-col ${
+              className={`flex flex-col w-full md:${
                 isFull ? 'w-full' : 'w-11/12'
               } self-center bg-blue-50 dark:bg-nightowl-200 p-8 border rounded-md border-blue-200 space-y-6`}
             >
-              <p className="text-sm md:text-lg font-medium text-gray-800 dark:text-gray-200 break-words">
+              <p className="text-lg font-medium text-gray-800 dark:text-gray-200 break-words">
                 Best way to reach me is by sending an email @{' '}
                 <a
                   className="font-bold underline underline-offset-2"
