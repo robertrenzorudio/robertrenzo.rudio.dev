@@ -1,3 +1,7 @@
+<p align="center" style="margin-bottom: 0px !important;">
+  <img width="200" height="200" alt="Robert Renzo Rudio Logo" src="https://github.com/robertrenzorudio/robertrenzo.rudio.dev/blob/main/public/favicon.png"/>
+</p>
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
