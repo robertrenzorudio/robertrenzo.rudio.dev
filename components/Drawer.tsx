@@ -25,7 +25,7 @@ const Drawer = ({ isOpen, setIsOpen }: Props) => {
     >
       <div
         className={
-          ' w-4/5 py-4 px-8 left-0 flex flex-col absolute bg-gray-200 dark:bg-nightowl-100 h-full delay-400 duration-500 ease-in-out transition-all transform' +
+          ' w-4/5 py-4 px-8 left-0 flex flex-col absolute bg-gray-200 dark:bg-gray-800 h-full delay-400 duration-500 ease-in-out transition-all transform' +
           (isOpen ? ' -translate-x-0 ' : ' -translate-x-full ')
         }
       >

@@ -21,7 +21,7 @@ const TextArea = ({ label, ...props }: Props) => {
       <textarea
         className={`shadow-sm ${
           error && 'focus:ring-rose-500 focus:border-rose-500'
-        } mt-1 block w-full sm:text-sm border border-gray-300 rounded-md bg-gray-100 dark:bg-nightowl-100`}
+        } mt-1 block w-full sm:text-sm border border-gray-300 rounded-md bg-gray-100 dark:bg-gray-800`}
         {...field}
         {...props}
       />

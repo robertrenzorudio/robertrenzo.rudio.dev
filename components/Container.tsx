@@ -22,7 +22,7 @@ const Container: React.FC<Props> = ({ children, meta: cMeta }) => {
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
 
   return (
-    <div className="bg-gray-100 dark:bg-nightowl-100 selection:bg-teal-250 dark:selection:bg-rose-500">
+    <div className="bg-gray-100 dark:bg-gray-800 selection:bg-teal-250 dark:selection:bg-rose-500">
       <Head>
         <title>{meta.title}</title>
         <link rel="icon" href="/favicon.png" />

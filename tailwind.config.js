@@ -16,9 +16,10 @@ module.exports = {
         teal: {
           250: '#64ffda',
         },
+        gray: { 250: '#A2ACBD' },
       },
       animation: {
-        blob: 'blob 20s infinite',
+        blob: 'blob 15s infinite',
       },
       keyframes: {
         blob: {
