@@ -36,7 +36,7 @@ const Container: React.FC<Props> = ({ children, meta: cMeta }) => {
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
       </Head>
-      <div className="w-full flex-col min-h-screen overflow-x-hidden bg-gray-100 dark:bg-gray-800 selection:bg-teal-250 dark:selection:bg-rose-500">
+      <div className="w-full flex-col h-screen overflow-x-hidden bg-gray-100 dark:bg-gray-800 selection:bg-teal-250 dark:selection:bg-rose-500">
         <Drawer isOpen={drawerIsOpen} setIsOpen={setDrawerIsOpen} />
         <Nav isOpen={drawerIsOpen} setIsOpen={setDrawerIsOpen} />
         <main>{children}</main>
