@@ -26,7 +26,7 @@ const Action = (props: ActionsProp) => {
       href={props.link}
       target="_blank"
       rel="noopener noreferrer"
-      className="h-9 rounded-lg flex items-center justify-center hover:ring-2 ring-rose-500 transition-all p-1 ml-2"
+      className="h-9 rounded-lg flex items-center justify-center hover:ring-2 ring-rose-600 dark:ring-orange-500 transition-all p-1 ml-2"
     >
       <props.icon className="w-5 h-5 text-blue-1100 dark:text-indigo-100" />
       <h5 className="text-sm ml-1">{props.linkName}</h5>
