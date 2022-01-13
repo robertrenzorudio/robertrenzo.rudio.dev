@@ -1,15 +1,20 @@
-import React from 'react';
+import Typewriter from 'typewriter-effect';
 
 interface Props {}
 
 const Intro = (props: Props) => {
   return (
-    <div className="flex justify-between max-w-2xl mx-auto px-8 md:px-0 2xl:max-w-4xl pt-4">
-      <div className="w-full md:w-4/5 space-y-6">
-        <h1 className="text-3xl font-medium text-gray-800 dark:text-gray-100">
-          Hey there 👋 <br />
-          I&apos;m <span className="font-extrabold">Robert Renzo Rudio</span>
-        </h1>
+    <div className="flex justify-between mx-auto px-6 md:px-12 lg:px-0 lg:max-w-3xl 2xl:max-w-5xl">
+      <div className="w-11/12 lg:w-4/5 flex flex-col text-blue-1100 dark:text-indigo-100 space-y-3 ">
+        <span className="text-lg font-light">Hey there, I am</span>
+        <span className="text-3xl md:text-5xl text-rose-600 dark:text-orange-500 font-extrabold">
+          <Typewriter
+            options={{ delay: 50 }}
+            onInit={(typewriter) =>
+              typewriter.typeString('Robert Renzo Rudio 👋 ').start()
+            }
+          />
+        </span>
         <p className="text-lg font-light">
           I am a recent graduate from{' '}
           <a
@@ -20,8 +25,8 @@ const Intro = (props: Props) => {
           >
             UCLA
           </a>{' '}
-          with a bachelor&apos;s degree in computer engineering in December
-          2021. I am interested in full-stack, back-end, and embedded software
+          with a Bachelor&apos;s Degree in Computer Engineering (December 2021).
+          I am interested in full-stack, back-end, and embedded software
           development.
         </p>
       </div>

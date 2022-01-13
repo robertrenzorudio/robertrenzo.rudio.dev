@@ -5,9 +5,7 @@ import TextArea from './TextArea';
 import * as Yup from 'yup';
 import { userData } from '../constants';
 
-interface Props {
-  isFull?: boolean;
-}
+interface Props {}
 
 const EmailSchema = Yup.object().shape({
   name: Yup.string()
@@ -19,14 +17,13 @@ const EmailSchema = Yup.object().shape({
   message: Yup.string().required('Required!'),
 });
 
-const Contact = ({ isFull }: Props) => {
+const Contact = (props: Props) => {
   return (
     <>
-      <div
-        id="contact"
-        className="flex flex-col max-w-2xl 2xl:max-w-4xl mx-auto w-full md:px-0 space-y-3 p-4 px-8"
-      >
-        <h1 className="text-3xl font-extrabold">Contact</h1>
+      <div className="flex flex-col mx-auto w-full px-6 md:px-12 lg:px-0 lg:max-w-3xl 2xl:max-w-5xl">
+        <h1 className="text-3xl md:text-4xl font-bold text-blue-1000 dark:text-indigo-300">
+          Contact
+        </h1>
         <Formik
           initialValues={{
             name: '',
@@ -61,13 +58,9 @@ const Contact = ({ isFull }: Props) => {
             }
           }}
         >
-          {({ isSubmitting }) => (
-            <Form
-              className={`flex flex-col w-full md:${
-                isFull ? 'w-full' : 'w-11/12'
-              } self-center bg-blue-50 dark:bg-nightowl-200 p-8 border rounded-md border-blue-200 space-y-6`}
-            >
-              <p className="text-lg font-medium text-gray-800 dark:text-gray-200 break-words">
+          {({ isSubmitting, isValid, dirty }) => (
+            <Form className="flex flex-col w-full self-center p-6 md:p-8 mt-6 border border-blue-1000 dark:border-indigo-300 space-y-6">
+              <p className="text-lg font-medium text-blue-1100 dark:text-indigo-100 break-words">
                 Best way to reach me is by sending an email @{' '}
                 <a
                   className="font-bold underline underline-offset-2"
@@ -80,8 +73,9 @@ const Contact = ({ isFull }: Props) => {
               <div className="grid grid-cols-6 gap-6">
                 <div className="col-span-6 md:col-span-3">
                   <Input
+                    required
                     id="name"
-                    label="Name"
+                    label="Name *"
                     name="name"
                     type="text"
                     placeholder="John Doe"
@@ -90,8 +84,9 @@ const Contact = ({ isFull }: Props) => {
 
                 <div className="col-span-6 md:col-span-3">
                   <Input
+                    required
                     id="email"
-                    label="Email"
+                    label="Email *"
                     name="email"
                     type="email"
                     placeholder="john@doe.tld"
@@ -110,8 +105,9 @@ const Contact = ({ isFull }: Props) => {
 
                 <div className="col-span-6">
                   <TextArea
+                    required
                     id="message"
-                    label="Message"
+                    label="Message *"
                     name="message"
                     rows={6}
                     placeholder="Hey there 👋"
@@ -119,21 +115,26 @@ const Contact = ({ isFull }: Props) => {
                 </div>
               </div>
 
-              <div className="flex w-16 h-10 self-end">
+              <div className="flex w-full h-12 ">
                 <button
                   type="submit"
-                  disabled={isSubmitting}
-                  className="border w-full h-full p-2 bg-gray-100 dark:bg-nightowl-100 text-md rounded-m rounded-md"
+                  disabled={!(isValid && dirty)}
+                  className="border border-blue-1000 dark:border-indigo-300 w-full h-full p-2 "
                 >
-                  <span hidden={isSubmitting}>Send</span>
+                  <span
+                    hidden={isSubmitting}
+                    className="text-blue-1000 dark:text-indigo-300 text-lg font-bold"
+                  >
+                    Send
+                  </span>
                   <div
-                    className={`loading flex space-x-1 self-center ${
+                    className={`loading flex space-x-1 justify-center ${
                       isSubmitting ? '' : 'hidden'
                     }`}
                   >
-                    <div className="w-3 h-3 bg-gray-600/70 rounded-full animate-bounce"></div>
-                    <div className="w-3 h-3 bg-gray-600/70 rounded-full animate-bounce"></div>
-                    <div className="w-3 h-3 bg-gray-600/70 rounded-full animate-bounce"></div>
+                    <div className="w-3 h-3 bg-indigo-300/50 rounded-full animate-bounce"></div>
+                    <div className="w-3 h-3 bg-indigo-300/50 rounded-full animate-bounce"></div>
+                    <div className="w-3 h-3 bg-indigo-300/50 rounded-full animate-bounce"></div>
                   </div>
                 </button>
               </div>

@@ -7,16 +7,20 @@ interface Props {}
 
 const Footer = (props: Props) => {
   return (
-    <footer className="flex flex-col max-w-2xl 2xl:max-w-4xl mx-auto w-full p-8 md:px-0">
-      <hr className="pb-8 border-1 border-gray-600"></hr>
+    <footer className="flex flex-col mx-auto w-full px-6 pt-20 pb-8 md:px-12 lg:px-0 lg:max-w-3xl 2xl:max-w-5xl">
+      <hr className="pb-8 border-1 border-rose-600 dark:border-orange-500"></hr>
 
       <div className="grid grid-cols-2">
         <div className="flex flex-col space-y-4 ">
           <Link href="/">
-            <a className="text-gray-600 hover:text-gray-800">Home</a>
+            <a className="text-gray-600 hover:text-gray-800 dark:hover:text-gray-400">
+              Home
+            </a>
           </Link>
           <Link href="/projects">
-            <a className="text-gray-600 hover:text-gray-800">Projects</a>
+            <a className="text-gray-600 hover:text-gray-800 dark:hover:text-gray-400">
+              Projects
+            </a>
           </Link>
         </div>
         <div className="flex flex-col space-y-4 overflow-scroll">
@@ -24,7 +28,7 @@ const Footer = (props: Props) => {
             href={userData.socialLinks.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-gray-800"
+            className="text-gray-600 hover:text-gray-800 dark:hover:text-gray-400"
           >
             Github
           </a>
@@ -33,7 +37,7 @@ const Footer = (props: Props) => {
             href={userData.socialLinks.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-gray-800"
+            className="text-gray-600 hover:text-gray-800 dark:hover:text-gray-400"
           >
             LinkedIn
           </a>

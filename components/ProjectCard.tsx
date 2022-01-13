@@ -28,7 +28,7 @@ const Action = (props: ActionsProp) => {
       rel="noopener noreferrer"
       className="h-9 rounded-lg flex items-center justify-center hover:ring-2 ring-rose-500 transition-all p-1 ml-2"
     >
-      <props.icon className="w-5 h-5 text-gray-800 dark:text-gray-100" />
+      <props.icon className="w-5 h-5 text-blue-1100 dark:text-indigo-100" />
       <h5 className="text-sm ml-1">{props.linkName}</h5>
     </a>
   );
@@ -42,19 +42,15 @@ const ProjectCard = ({
   techStack,
 }: ProjectCardProps) => {
   return (
-    <div className="relative flex flex-row bg-gray-200 dark:bg-nightowl-200 p-6 border border-gray-900 dark:border-gray-100 rounded-lg w-full  mx-auto space-x-1">
+    <div className="relative flex flex-row bg-gray-200 dark:bg-nightowl-200 p-6 border border-blue-1000 dark:border-indigo-300 rounded-lg w-full mx-auto space-x-1 text-blue-1100 dark:text-indigo-100">
       <div
         className={`flex flex-col justify-between overflow-hidden w-full ${
           imgSrc ? 'md:w-4/5' : ''
         } p-1`}
       >
         <div className="mb-3">
-          <h5 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">
-            {name}
-          </h5>
-          <p className="text-sm text-gray-900 dark:text-gray-100">
-            {description}
-          </p>
+          <h5 className="text-xl font-bold mb-2">{name}</h5>
+          <p className="text-sm">{description}</p>
         </div>
         <div className="flex space-x-2 flex-wrap space-between -mt-1 -ml-2">
           {techStack.map((tech) => (

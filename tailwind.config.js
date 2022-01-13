@@ -16,16 +16,24 @@ module.exports = {
         teal: {
           250: '#64ffda',
         },
-        gray: { 250: '#A2ACBD' },
+        blue: { 1000: '#457b9d', 1100: '#264653' },
+        gray: { 950: '#264653' },
       },
       animation: {
-        blob: 'blob 15s infinite',
+        blobTop: 'blobTop 15s infinite',
+        blobBot: 'blobBot 15s infinite',
       },
       keyframes: {
-        blob: {
+        blobTop: {
           '0%': { transform: 'translate(0px, 0px) scale(1)' },
-          '33%': { transform: 'translate(30px, -10px) scale(1.1)' },
-          '66%': { transform: 'translate(-50px, -100px) scale(0.9)' },
+          '33%': { transform: 'translate(-10px, 40px) scale(1.1)' },
+          '66%': { transform: 'translate(60px, -10px) scale(0.9)' },
+          '100%': { transform: 'translate(0px, 0px) scale(1)' },
+        },
+        blobBot: {
+          '0%': { transform: 'translate(0px, 0px) scale(1)' },
+          '33%': { transform: 'translate(10px, -30px) scale(1.1)' },
+          '66%': { transform: 'translate(30px, -50px) scale(0.9)' },
           '100%': { transform: 'translate(0px, 0px) scale(1)' },
         },
       },
