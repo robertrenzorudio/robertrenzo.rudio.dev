@@ -4,7 +4,7 @@ import Container from '../components/Container';
 
 const Home: NextPage = () => {
   return (
-    <Container meta={{ title: 'Contact' }}>
+    <Container meta={{ title: 'Contact - Robert Renzo Rudio' }}>
       <Contact />
     </Container>
   );

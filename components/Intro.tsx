@@ -16,7 +16,7 @@ const Intro = (props: Props) => {
           <Typewriter
             options={{ delay: 50, stringSplitter }}
             onInit={(typewriter) =>
-              typewriter.typeString('Robert Renzo Rudio 👋 ').start()
+              typewriter.typeString('Robert Renzo Rudio 👋').start()
             }
           />
         </span>
