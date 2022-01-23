@@ -52,7 +52,7 @@ const ProjectCard = ({
           <h5 className="text-xl font-bold mb-2">{name}</h5>
           <p className="text-sm">{description}</p>
         </div>
-        <div className="flex space-x-2 flex-wrap space-between -mt-1 -ml-2">
+        <div className="flex space-x-2 flex-wrap -mt-1 -ml-2">
           {techStack.map((tech) => (
             <h5
               key={tech}

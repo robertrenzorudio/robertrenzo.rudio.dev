@@ -1,3 +1,4 @@
+import Skills from 'components/Skills';
 import type { NextPage } from 'next';
 import Contact from '../components/Contact';
 import Container from '../components/Container';
@@ -9,6 +10,7 @@ const Home: NextPage = () => {
     <Container>
       <Intro />
       <FeatuedProjects />
+      <Skills />
       <Contact />
     </Container>
   );

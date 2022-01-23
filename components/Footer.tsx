@@ -54,7 +54,7 @@ const Footer = (props: Props) => {
           <Image src="/images/nextjs.png" layout="fill" alt="Nextjs Logo" />
         </a>
         <a
-          href="https://nextjs.org/"
+          href="https://www.typescriptlang.org"
           rel="noopener noreferrer"
           target="__blank"
           className="relative w-6 h-6"
@@ -67,7 +67,7 @@ const Footer = (props: Props) => {
         </a>
         <p className="text-gray-600">and</p>
         <a
-          href="https://nextjs.org/"
+          href="https://tailwindcss.com"
           rel="noopener noreferrer"
           target="__blank"
           className="relative w-6 h-6"
