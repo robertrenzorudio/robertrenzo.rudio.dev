@@ -12,7 +12,7 @@ export const userData = {
 type Project = {
   name: string;
   description: string;
-  imgSrc?: string;
+  imgSrc: string;
   techStack: string[];
   links: {
     link: string;
@@ -28,7 +28,7 @@ export const projects: Project[] = [
     description:
       'A country, state, and city GraphQL API. It features cursor-based pagination ' +
       'that follows the GraphQL cursor connection specification and rate limiting.',
-    imgSrc: '/images/geographql.svg',
+    imgSrc: '/images/example.png',
     links: [
       {
         link: 'https://github.com/robertrenzorudio/geographql',
@@ -71,7 +71,7 @@ export const projects: Project[] = [
   {
     name: 'ReactShop',
     description: 'A simple e-commerce web app.',
-    imgSrc: '/images/reactshop.svg',
+    imgSrc: '/images/examples.svg',
     links: [
       {
         link: 'https://github.com/robertrenzorudio/react-shop',

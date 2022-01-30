@@ -18,6 +18,7 @@ module.exports = {
         },
         blue: { 1000: '#457b9d', 1100: '#264653' },
         gray: { 950: '#264653' },
+        orange: { 150: '#ff9a63' },
       },
       animation: {
         blobTop: 'blobTop 15s infinite',

@@ -1,6 +1,7 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
 import { projects } from '../constants';
+import FeaturedProjectCard from './FeaturedProjectCard';
 
 interface Props {}
 
@@ -16,22 +17,20 @@ const FeatuedProjects = (props: Props) => {
         <div className="absolute -bottom-8 md:bottom-0 -left-4 w-96 h-96 bg-orange-300 rounded-full mix-blend-multiply filter blur-xl opacity-60 animate-blobBot animation-delay-2000"></div>
         <div className="invisible md:visible absolute bottom-0 -right-4 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-60 animate-blobBot animation-delay-4000"></div>
       </div> */}
-      <div className="flex flex-col space-y-6 mt-6 ">
+      <div className="flex flex-col space-y-10 mt-6 ">
         {projects
           .filter(({ isFeatured }) => isFeatured)
-          .map(
-            ({ name, description, imgSrc, techStack, links, isFeatured }) => (
-              <ProjectCard
-                key={name}
-                name={name}
-                description={description}
-                imgSrc={imgSrc}
-                techStack={techStack}
-                links={links}
-                isFeatured={isFeatured}
-              />
-            )
-          )}
+          .map(({ name, description, imgSrc, techStack, links }, i) => (
+            <FeaturedProjectCard
+              key={name}
+              name={name}
+              description={description}
+              imgSrc={imgSrc}
+              techStack={techStack}
+              links={links}
+              align={i % 2 === 0 ? 'right' : 'left'}
+            />
+          ))}
       </div>
     </div>
   );

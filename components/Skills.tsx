@@ -12,7 +12,7 @@ const Skills = (props: Props) => {
       </h1>
 
       <div className="space-y-1">
-        <h3 className="text-lg font-light text-rose-600 dark:text-orange-500">
+        <h3 className="text-lg font-light text-rose-600 dark:text-orange-150">
           Programming Languages
         </h3>
 
@@ -24,7 +24,7 @@ const Skills = (props: Props) => {
       </div>
 
       <div className="space-y-1">
-        <h3 className="text-lg font-light text-rose-600 dark:text-orange-500">
+        <h3 className="text-lg font-light text-rose-600 dark:text-orange-150">
           Frameworks & Technologies
         </h3>
 

@@ -59,7 +59,7 @@ const Contact = (props: Props) => {
           }}
         >
           {({ isSubmitting, isValid, dirty }) => (
-            <Form className="flex flex-col w-full self-center p-6 md:p-8 mt-6 border border-blue-1000 dark:border-indigo-300 space-y-6">
+            <Form className="flex flex-col w-full self-center p-6 md:p-8 mt-6 border-2 border-blue-1000 dark:border-indigo-300 space-y-6">
               <p className="text-lg font-medium text-blue-1100 dark:text-indigo-100 break-words">
                 Best way to reach me is by sending an email @{' '}
                 <a
