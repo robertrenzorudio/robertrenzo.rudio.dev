@@ -8,7 +8,7 @@ interface Props {}
 const Footer = (props: Props) => {
   return (
     <footer className="flex flex-col mx-auto w-full px-6 pt-20 pb-8 md:px-12 lg:px-0 lg:max-w-3xl 2xl:max-w-5xl">
-      <hr className="pb-8 border-1 border-rose-600 dark:border-orange-150"></hr>
+      <hr className="pb-8 border-1 border-indigo-700 dark:border-orange-150"></hr>
 
       <div className="grid grid-cols-2">
         <div className="flex flex-col space-y-4 ">

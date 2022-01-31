@@ -8,7 +8,7 @@ interface Props {}
 const FeatuedProjects = (props: Props) => {
   return (
     <div className="relative flex flex-col mx-auto w-full px-6 md:px-12 lg:px-0 lg:max-w-3xl 2xl:max-w-5xl">
-      <h1 className="text-3xl md:text-4xl font-bold text-blue-1000 dark:text-indigo-300">
+      <h1 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-indigo-300">
         Projects
       </h1>
       {/* <div className="isolate">

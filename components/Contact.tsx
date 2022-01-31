@@ -21,7 +21,7 @@ const Contact = (props: Props) => {
   return (
     <>
       <div className="flex flex-col mx-auto w-full px-6 md:px-12 lg:px-0 lg:max-w-3xl 2xl:max-w-5xl">
-        <h1 className="text-3xl md:text-4xl font-bold text-blue-1000 dark:text-indigo-300">
+        <h1 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-indigo-300">
           Contact
         </h1>
         <Formik
@@ -119,7 +119,7 @@ const Contact = (props: Props) => {
                 <button
                   type="submit"
                   disabled={!(isValid && dirty)}
-                  className="border border-blue-1000 dark:border-indigo-300 w-full h-full p-2 "
+                  className="border-2 border-blue-1000 dark:border-indigo-300 w-full h-full p-2 "
                 >
                   <span
                     hidden={isSubmitting}

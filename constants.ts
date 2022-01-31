@@ -28,7 +28,7 @@ export const projects: Project[] = [
     description:
       'A country, state, and city GraphQL API. It features cursor-based pagination ' +
       'that follows the GraphQL cursor connection specification and rate limiting.',
-    imgSrc: '/images/example.png',
+    imgSrc: 'https://imgur.com/CEzSFuS',
     links: [
       {
         link: 'https://github.com/robertrenzorudio/geographql',
@@ -57,7 +57,7 @@ export const projects: Project[] = [
       'A system design capstone group project where we built an IoT security camera device. ' +
       'It features noise/movement detection, voice commands, notification system, cloud storage ' +
       'and a GUI.',
-    imgSrc: '/images/nightlight.svg',
+    imgSrc: '/images/test.png',
     links: [
       {
         link: 'https://github.com/robertrenzorudio/nightlight',

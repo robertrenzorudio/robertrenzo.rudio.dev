@@ -31,7 +31,7 @@ interface FeaturedProjectCardProps {
 }
 
 const FeaturedProjectCard = ({
-  align = 'left',
+  align,
   name,
   imgSrc,
   description,
@@ -40,7 +40,7 @@ const FeaturedProjectCard = ({
 }: FeaturedProjectCardProps) => {
   return (
     <div
-      className={`p-5 border-2 border-indigo-300 md:border-0 md:p-0 relative w-full h-auto md:h-80 flex ${
+      className={`p-5 border-2 border-orange-600 dark:border-indigo-300 md:border-0 md:p-0 relative w-full h-auto md:h-80 flex ${
         align === 'left' ? 'flex-row-reverse' : ''
       } overflow-hidden`}
     >
@@ -50,16 +50,18 @@ const FeaturedProjectCard = ({
       </div>
 
       <div
-        className={`relative flex flex-col justify-center space-y-6 w-full md:w-3/5 items-${
-          align === 'left' ? 'start' : 'end'
+        className={`relative flex flex-col justify-center space-y-4 md:space-y-6 w-full md:w-3/5 ${
+          align === 'left' ? 'items-start' : 'items-end'
         }`}
       >
         <div className="">
-          <h1 className="font-semibold text-2xl text-orange-150">{name}</h1>
+          <h1 className="font-semibold text-2xl text-indigo-700 dark:text-orange-150">
+            {name}
+          </h1>
         </div>
 
-        <div className="md:border md:border-indigo-300 bg-orange-150 md:bg-nightowl-100 p-5 sm:w-full md:w-11/12 h-auto md:max-h-32 overflow-scroll">
-          <p className="font-semibold md:font-light text-gray-800 md:text-indigo-100">
+        <div className="shadow-lg md:rounded-2xl bg-indigo-700 dark:bg-orange-150 md:bg-gray-200 md:dark:bg-nightowl-100 p-5 sm:w-full md:w-11/12 h-auto md:max-h-32 overflow-scroll">
+          <p className="font-semibold md:font-light text-indigo-100 dark:text-gray-800 md:text-blue-1100 md:dark:text-indigo-100">
             {description}
           </p>
         </div>
@@ -69,14 +71,17 @@ const FeaturedProjectCard = ({
             align === 'left' ? 'start' : 'end'
           }`}
         >
-          <div className="flex flex-row flex-wrap space-x-2 -mt-1 -ml-2 md:-mt-0 md:-ml-2">
+          <div className="flex flex-row flex-wrap space-x-2 -mt-1 -ml-2">
             {techStack.map((tech) => (
-              <h5 key={tech} className=" text-sm text-indigo-100 mt-1 ml-2">
+              <h5
+                key={tech}
+                className=" text-sm text-gray-600 dark:text-gray-400 mt-1 ml-2"
+              >
                 {tech}
               </h5>
             ))}
           </div>
-          <div className="flex flex-row p-1 space-x-2">
+          <div className="flex flex-row space-x-2">
             {links.map(({ link, linkName, icon }) => (
               <Action
                 key={linkName}

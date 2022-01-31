@@ -50,7 +50,7 @@ const Nav = ({ isOpen, setIsOpen }: Props) => {
             href={userData.socialLinks.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-9 h-9 rounded-lg flex items-center justify-center hover:ring-2 ring-rose-600 dark:ring-orange-500 transition-all"
+            className="w-9 h-9 rounded-lg flex items-center justify-center hover:ring-2 ring-indigo-700 dark:ring-orange-500 transition-all"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@ const Nav = ({ isOpen, setIsOpen }: Props) => {
             href={userData.socialLinks.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-9 h-9 rounded-lg flex items-center justify-center hover:ring-2 ring-rose-600 dark:ring-orange-500 transition-all"
+            className="w-9 h-9 rounded-lg flex items-center justify-center hover:ring-2 ring-indigo-700 dark:ring-orange-500 transition-all"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +84,7 @@ const Nav = ({ isOpen, setIsOpen }: Props) => {
             <button
               aria-label="Toggle Dark Mode"
               type="button"
-              className="w-9 h-9 rounded-lg flex items-center justify-center hover:ring-2 ring-rose-600 dark:ring-orange-500  transition-all"
+              className="w-9 h-9 rounded-lg flex items-center justify-center hover:ring-2 ring-indigo-700 dark:ring-orange-500  transition-all"
               onClick={() => {
                 setTheme(currTheme === 'dark' ? 'light' : 'dark');
               }}

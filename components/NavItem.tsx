@@ -19,10 +19,10 @@ const NavItem: React.FC<Props> = ({ href, name }) => {
           className={cn(
             'font-medium text-blue-1100 dark:text-indigo-100',
             {
-              'underline underline-offset-8 decoration-2 decoration-rose-600 dark:decoration-orange-500':
+              'underline underline-offset-8 decoration-2 decoration-indigo-700 dark:decoration-orange-500':
                 isActive,
             },
-            'hidden md:inline-block hover:underline underline-offset-8 decoration-2 decoration-rose-600 dark:decoration-orange-500'
+            'hidden md:inline-block hover:underline underline-offset-8 decoration-2 decoration-indigo-700 dark:decoration-orange-500'
           )}
         >
           {name}

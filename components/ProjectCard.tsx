@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import React from 'react';
+import Action from './Action';
 
 interface ProjectCardProps {
   name: string;
@@ -14,71 +14,51 @@ interface ProjectCardProps {
   isFeatured: boolean;
 }
 
-interface ActionsProp {
-  link: string;
-  linkName: string;
-  icon: (props: React.ComponentProps<'svg'>) => JSX.Element;
-}
-
-const Action = (props: ActionsProp) => {
-  return (
-    <a
-      href={props.link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="h-9 rounded-lg flex items-center justify-center hover:ring-2 ring-rose-600 dark:ring-orange-500 transition-all p-1 ml-2"
-    >
-      <props.icon className="w-5 h-5 text-blue-1100 dark:text-indigo-100" />
-      <h5 className="text-sm ml-1">{props.linkName}</h5>
-    </a>
-  );
-};
-
 const ProjectCard = ({
   name,
-  imgSrc,
   description,
   links,
   techStack,
 }: ProjectCardProps) => {
   return (
-    <div className="relative flex flex-row bg-gray-200 dark:bg-nightowl-200 p-6 border border-blue-1000 dark:border-indigo-300 rounded-lg w-full mx-auto space-x-3 text-blue-1100 dark:text-indigo-100">
-      <div
-        className={`flex flex-col justify-between overflow-hidden w-full ${
-          imgSrc ? 'md:w-4/5' : ''
-        } p-1`}
-      >
-        <div className="mb-3">
-          <h5 className="text-xl font-bold mb-2">{name}</h5>
-          <p className="text-sm">{description}</p>
+    <div className="group relative w-full h-96 md:w-80 md:h-80">
+      <div className="absolute border-4 bottom-0 w-full border-orange-600 dark:border-indigo-300"></div>
+      <div className="bg-gray-100 dark:bg-gray-800 p-5 border-2 border-orange-600 dark:border-indigo-300 relative w-full h-full flex flex-col overflow-hidden justify-between transition-all hover:-translate-y-2">
+        <div className="">
+          <h1 className="font-semibold text-2xl text-indigo-700 dark:text-orange-150">
+            {name}
+          </h1>
         </div>
-        <div className="flex space-x-2 flex-wrap -mt-1 -ml-2">
-          {techStack.map((tech) => (
-            <h5
-              key={tech}
-              className="bg-gray-300 dark:bg-gray-800 italic text-sm mt-1 ml-2"
-            >
-              {tech}
-            </h5>
-          ))}
+
+        <div className="overflow-scroll">
+          <p className="font-light text-blue-1100 dark:text-indigo-100">
+            {description}
+          </p>
         </div>
-        <div className="flex space-x-2 mt-3 flex-wrap -ml-2">
-          {links.map(({ link, linkName, icon }) => (
-            <Action
-              key={linkName}
-              link={link}
-              linkName={linkName}
-              icon={icon}
-            />
-          ))}
+
+        <div className="flex flex-col space-y-3">
+          <div className="flex flex-row flex-wrap space-x-2 -mt-1 -ml-2 md:-mt-0 md:-ml-2 ">
+            {techStack.map((tech) => (
+              <h5
+                key={tech}
+                className="text-sm  mt-1 ml-2 text-gray-600 dark:text-gray-400"
+              >
+                {tech}
+              </h5>
+            ))}
+          </div>
+          <div className="flex flex-row space-x-2">
+            {links.map(({ link, linkName, icon }) => (
+              <Action
+                key={linkName}
+                link={link}
+                linkName={linkName}
+                icon={icon}
+              />
+            ))}
+          </div>
         </div>
       </div>
-
-      {imgSrc && (
-        <div className="hidden sm:block md:flex w-1/5 relative">
-          <Image src={imgSrc} alt={`${name} Logo`} layout="fill" />
-        </div>
-      )}
     </div>
   );
 };

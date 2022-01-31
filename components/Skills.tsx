@@ -7,12 +7,12 @@ interface Props {}
 const Skills = (props: Props) => {
   return (
     <div className="flex flex-col mx-auto w-full px-6 md:px-12 lg:px-0 lg:max-w-3xl 2xl:max-w-5xl space-y-6">
-      <h1 className="text-3xl md:text-4xl font-bold text-blue-1000 dark:text-indigo-300">
+      <h1 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-indigo-300">
         Skills
       </h1>
 
       <div className="space-y-1">
-        <h3 className="text-lg font-light text-rose-600 dark:text-orange-150">
+        <h3 className="text-lg font-light text-indigo-700 dark:text-orange-150">
           Programming Languages
         </h3>
 
@@ -24,7 +24,7 @@ const Skills = (props: Props) => {
       </div>
 
       <div className="space-y-1">
-        <h3 className="text-lg font-light text-rose-600 dark:text-orange-150">
+        <h3 className="text-lg font-light text-indigo-700 dark:text-orange-150">
           Frameworks & Technologies
         </h3>
 
