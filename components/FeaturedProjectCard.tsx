@@ -5,18 +5,34 @@ import Action from './Action';
 interface MyImageProp {
   imgSrc: string;
   alt: string;
-  w: number;
+  projLink: string;
 }
-const MyImage = ({ imgSrc, alt }: MyImageProp) => {
+const MyImage = ({ imgSrc, alt, projLink }: MyImageProp) => {
   return (
-    <a href="https://google.com">
-      <div
-        className={`md:w-[22rem] lg:w-[26rem] 2xl:w-[34rem] h-80 relative transition ease-out duration-[2000ms] hover:scale-125 group`}
-      >
-        <Image src={imgSrc} layout="fill" alt={alt} />
-        <div className="absolute bg-orange-600/30 dark:bg-indigo-300/80 w-full h-full group-hover:hidden"></div>
+    <div
+      className={`md:w-[22rem] lg:w-[26rem] 2xl:w-[34rem] h-80 group relative`}
+    >
+      <Image
+        src={imgSrc}
+        layout="fill"
+        alt={alt}
+        className="group-hover:blur-sm "
+      />
+      <div className="absolute w-full h-full group-hover:visible invisible flex items-center justify-center">
+        <a
+          href={projLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-600 hover:text-gray-800 dark:hover:text-gray-400"
+        >
+          <button className="bg-indigo-700 dark:bg-orange-150 rounded-full h-24 w-24 font-semibold text-indigo-100 dark:text-gray-800">
+            View
+            <br />
+            Project
+          </button>
+        </a>
       </div>
-    </a>
+    </div>
   );
 };
 
@@ -49,7 +65,15 @@ const FeaturedProjectCard = ({
     >
       <div className="hidden md:block w-2/5" />
       <div className="absolute overflow-hidden rounded-2xl">
-        <MyImage imgSrc={imgSrc} w={96} alt={name} />
+        <MyImage
+          imgSrc={imgSrc}
+          alt={name}
+          projLink={
+            links.find(
+              ({ linkName }) => linkName.toLocaleLowerCase() === 'website'
+            )?.link || links[0].link
+          }
+        />
       </div>
 
       <div
