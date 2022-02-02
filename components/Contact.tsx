@@ -59,7 +59,7 @@ const Contact = (props: Props) => {
           }}
         >
           {({ isSubmitting, isValid, dirty }) => (
-            <Form className="flex flex-col w-full self-center p-6 md:p-8 mt-6 border-2 border-blue-1000 dark:border-indigo-300 space-y-6">
+            <Form className="flex flex-col w-full self-center p-6 md:p-8 mt-6 border-2 border-orange-600 dark:border-indigo-300 space-y-6">
               <p className="text-lg font-medium text-blue-1100 dark:text-indigo-100 break-words">
                 Best way to reach me is by sending an email @{' '}
                 <a
@@ -119,11 +119,11 @@ const Contact = (props: Props) => {
                 <button
                   type="submit"
                   disabled={!(isValid && dirty)}
-                  className="border-2 border-blue-1000 dark:border-indigo-300 w-full h-full p-2 "
+                  className="border-2 border-orange-600 dark:border-indigo-300 w-full h-full p-2 "
                 >
                   <span
                     hidden={isSubmitting}
-                    className="text-blue-1000 dark:text-indigo-300 text-lg font-bold"
+                    className="text-orange-600 dark:text-indigo-300 text-lg font-bold"
                   >
                     Send
                   </span>
