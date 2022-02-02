@@ -19,19 +19,30 @@ const ProjectCard = ({
   description,
   links,
   techStack,
+  isFeatured,
 }: ProjectCardProps) => {
   return (
-    <div className="group relative w-full h-96 md:w-80 md:h-80">
-      <div className="absolute border-4 bottom-0 w-full border-orange-600 dark:border-indigo-300"></div>
-      <div className="bg-gray-100 dark:bg-gray-800 p-5 border-2 border-orange-600 dark:border-indigo-300 relative w-full h-full flex flex-col overflow-hidden justify-between transition-all hover:-translate-y-2">
+    <div className="group relative w-full h-96">
+      <div className="absolute border-4 bottom-0 w-full border-orange-600 dark:border-indigo-300" />
+      <div className="bg-gray-100 dark:bg-gray-800 p-5 border-2 border-orange-600 dark:border-indigo-300 relative w-full h-full flex flex-col overflow-hidden justify-between space-y-6 transition-all hover:-translate-y-2">
         <div className="">
           <h1 className="font-semibold text-2xl text-indigo-700 dark:text-orange-150">
             {name}
           </h1>
         </div>
 
-        <div className="overflow-scroll">
-          <p className="font-light text-blue-1100 dark:text-indigo-100">
+        <div
+          className={`overflow-scroll ${
+            isFeatured ? 'bg-indigo-700 dark:bg-orange-150 p-5' : '0'
+          }`}
+        >
+          <p
+            className={`font-light text-blue-1100 dark:text-indigo-100 ${
+              isFeatured
+                ? 'font-semibold text-indigo-100 dark:text-gray-800'
+                : 'font-light text-blue-1100 dark:text-indigo-100'
+            }`}
+          >
             {description}
           </p>
         </div>

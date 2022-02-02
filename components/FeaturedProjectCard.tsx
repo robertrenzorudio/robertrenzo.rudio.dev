@@ -9,11 +9,14 @@ interface MyImageProp {
 }
 const MyImage = ({ imgSrc, alt }: MyImageProp) => {
   return (
-    <div
-      className={`md:w-[22rem] lg:w-[26rem] 2xl:w-[34rem] h-80 relative transition ease-out duration-[2000ms] hover:scale-125`}
-    >
-      <Image src={imgSrc} layout="fill" alt={alt} />
-    </div>
+    <a href="https://google.com">
+      <div
+        className={`md:w-[22rem] lg:w-[26rem] 2xl:w-[34rem] h-80 relative transition ease-out duration-[2000ms] hover:scale-125 group`}
+      >
+        <Image src={imgSrc} layout="fill" alt={alt} />
+        <div className="absolute bg-orange-600/30 dark:bg-indigo-300/80 w-full h-full group-hover:hidden"></div>
+      </div>
+    </a>
   );
 };
 
@@ -60,7 +63,7 @@ const FeaturedProjectCard = ({
           </h1>
         </div>
 
-        <div className="shadow-lg md:rounded-2xl bg-indigo-700 dark:bg-orange-150 md:bg-gray-200 md:dark:bg-nightowl-100 p-5 sm:w-full md:w-11/12 h-auto md:max-h-32 overflow-scroll">
+        <div className="shadow-lg md:rounded-2xl bg-indigo-700 dark:bg-orange-150 md:bg-gray-200 md:dark:bg-nightowl-100 p-5 sm:w-full md:w-11/12 h-auto md:max-h-32 overflow-scroll text-center">
           <p className="font-semibold md:font-light text-indigo-100 dark:text-gray-800 md:text-blue-1100 md:dark:text-indigo-100">
             {description}
           </p>

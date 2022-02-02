@@ -1,4 +1,5 @@
 import { CodeIcon, GlobeIcon } from '@heroicons/react/outline';
+const imgSrcBase = process.env.NEXT_PUBLIC_PORTFOLIO_ASSETS_URL;
 
 export const userData = {
   name: 'Robert Renzo Rudio',
@@ -12,7 +13,7 @@ export const userData = {
 type Project = {
   name: string;
   description: string;
-  imgSrc: string;
+  imgSrc?: string;
   techStack: string[];
   links: {
     link: string;
@@ -20,6 +21,7 @@ type Project = {
     icon: (props: React.ComponentProps<'svg'>) => JSX.Element;
   }[];
   isFeatured: boolean;
+  date: Date;
 };
 
 export const projects: Project[] = [
@@ -28,7 +30,7 @@ export const projects: Project[] = [
     description:
       'A country, state, and city GraphQL API. It features cursor-based pagination ' +
       'that follows the GraphQL cursor connection specification and rate limiting.',
-    imgSrc: 'https://imgur.com/CEzSFuS',
+    imgSrc: imgSrcBase + '/geographql.png',
     links: [
       {
         link: 'https://github.com/robertrenzorudio/geographql',
@@ -42,7 +44,7 @@ export const projects: Project[] = [
       },
     ],
     techStack: [
-      'Typescript',
+      'TypeScript',
       'GraphQL',
       'PostgreSQL',
       'Prisma',
@@ -50,6 +52,7 @@ export const projects: Project[] = [
       'Docker',
     ],
     isFeatured: true,
+    date: new Date('2021-09'),
   },
   {
     name: 'NightLight',
@@ -57,7 +60,7 @@ export const projects: Project[] = [
       'A system design capstone group project where we built an IoT security camera device. ' +
       'It features noise/movement detection, voice commands, notification system, cloud storage ' +
       'and a GUI.',
-    imgSrc: '/images/test.png',
+    imgSrc: imgSrcBase + '/nightlight.png',
     links: [
       {
         link: 'https://github.com/robertrenzorudio/nightlight',
@@ -67,11 +70,33 @@ export const projects: Project[] = [
     ],
     techStack: ['Python', 'AWS EC2/S3/RDS', 'Raspberry Pi'],
     isFeatured: true,
+    date: new Date('2020-10'),
+  },
+  {
+    name: 'Game of Life',
+    description:
+      "Conway's Game of Life built with React hooks and styled with Tailwindcss.",
+    imgSrc: '/images/test.png',
+    links: [
+      {
+        link: 'https://github.com/robertrenzorudio/game-of-life',
+        linkName: 'Repo',
+        icon: CodeIcon,
+      },
+      {
+        link: 'https://gameoflife.rudio.dev',
+        linkName: 'Website',
+        icon: GlobeIcon,
+      },
+    ],
+    techStack: ['React', 'TypeScript', 'Tailwindcss'],
+    isFeatured: false,
+    date: new Date('2022-01'),
   },
   {
     name: 'ReactShop',
     description: 'A simple e-commerce web app.',
-    imgSrc: '/images/examples.svg',
+    imgSrc: imgSrcBase + '/reactshop.png',
     links: [
       {
         link: 'https://github.com/robertrenzorudio/react-shop',
@@ -84,8 +109,9 @@ export const projects: Project[] = [
         icon: GlobeIcon,
       },
     ],
-    techStack: ['React', 'Typescript', 'Prisma'],
+    techStack: ['React', 'TypeScript', 'Prisma'],
     isFeatured: true,
+    date: new Date('2021-08'),
   },
 ];
 
