@@ -1,5 +1,5 @@
 import { CodeIcon, GlobeIcon } from '@heroicons/react/outline';
-const imgSrcBase = process.env.NEXT_PUBLIC_PORTFOLIO_ASSETS_URL;
+const imgSrcBase = process.env.NEXT_PUBLIC_PORTFOLIO_STATIC_URL;
 
 export const userData = {
   name: 'Robert Renzo Rudio',

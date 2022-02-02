@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   images: {
-    domains: ['d1j0drt589g1p6.cloudfront.net'],
+    domains: ['d2dgspc4qdr5xo.cloudfront.net'],
   },
   reactStrictMode: true,
 };
