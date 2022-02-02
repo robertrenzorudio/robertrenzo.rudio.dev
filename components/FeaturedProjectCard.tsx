@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Action from './Action';
+import ProjectImage from './ProjectImage';
 
 interface MyImageProp {
   imgSrc: string;
@@ -65,7 +66,7 @@ const FeaturedProjectCard = ({
     >
       <div className="hidden md:block w-2/5" />
       <div className="absolute overflow-hidden rounded-2xl">
-        <MyImage
+        <ProjectImage
           imgSrc={imgSrc}
           alt={name}
           projLink={
@@ -73,6 +74,8 @@ const FeaturedProjectCard = ({
               ({ linkName }) => linkName.toLocaleLowerCase() === 'website'
             )?.link || links[0].link
           }
+          w="md:w-[22rem] lg:w-[26rem] 2xl:[34rem]"
+          h="h-80"
         />
       </div>
 
