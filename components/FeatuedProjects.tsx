@@ -1,11 +1,11 @@
 import React from 'react';
-
 import Link from 'next/link';
-
-import { projects } from '../constants';
 import FeaturedProjectCard from './FeaturedProjectCard';
+import { Project } from '../types/Project';
 
-interface Props {}
+interface Props {
+  projects: Project[];
+}
 
 const FeatuedProjects = (props: Props) => {
   return (
@@ -14,7 +14,7 @@ const FeatuedProjects = (props: Props) => {
         Projects
       </h1>
       <div className="flex flex-col space-y-10 md:space-y-24 mt-6 ">
-        {projects
+        {props.projects
           .filter(({ isFeatured }) => isFeatured)
           .map(({ name, description, imgSrc, techStack, links }, i) => (
             <FeaturedProjectCard

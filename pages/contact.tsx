@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
-import Contact from '../components/Contact';
-import Container from '../components/Container';
+import Contact from 'components/Contact';
+import Container from 'components/Container';
 
-const Home: NextPage = () => {
+const ContactPage: NextPage = () => {
   return (
     <Container meta={{ title: 'Contact - Robert Renzo Rudio' }}>
       <Contact />
@@ -10,4 +10,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default ContactPage;
