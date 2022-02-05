@@ -1,5 +1,5 @@
 import { prisma } from './prisma';
-import { Link, Project } from '../types/Project';
+import { Link, Project } from 'types/Project';
 
 export const getProjects = async () => {
   const data = await prisma.project.findMany({

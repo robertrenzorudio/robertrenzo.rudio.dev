@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from 'next';
-import { Project } from '../types/Project';
-import Container from '../components/Container';
-import ProjectCard from '../components/ProjectCard';
+import { Project } from 'types/Project';
+import Container from 'components/Container';
+import ProjectCard from 'components/ProjectCard';
 import { getProjects } from 'lib/getProjects';
 
 interface Props {
