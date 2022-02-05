@@ -38,3 +38,6 @@ yarn-error.log*
 
 # local
 public/localassets/*
+
+# 
+prisma/seed.ts

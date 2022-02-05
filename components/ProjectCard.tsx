@@ -1,3 +1,4 @@
+import siteToIcon from 'lib/siteToIcon';
 import React from 'react';
 import Action from './Action';
 
@@ -9,7 +10,6 @@ interface ProjectCardProps {
   links: {
     link: string;
     linkName: string;
-    icon: (props: React.ComponentProps<'svg'>) => JSX.Element;
   }[];
   isFeatured: boolean;
 }
@@ -59,14 +59,17 @@ const ProjectCard = ({
             ))}
           </div>
           <div className="flex flex-row space-x-2">
-            {links.map(({ link, linkName, icon }) => (
-              <Action
-                key={linkName}
-                link={link}
-                linkName={linkName}
-                icon={icon}
-              />
-            ))}
+            {links.map(({ link, linkName }) => {
+              const icon = siteToIcon(linkName)!;
+              return (
+                <Action
+                  key={linkName}
+                  link={link}
+                  linkName={linkName}
+                  icon={icon}
+                />
+              );
+            })}
           </div>
         </div>
       </div>

@@ -1,12 +1,19 @@
-import type { NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
+import { Project } from '../types/Project';
 import Container from '../components/Container';
 import ProjectCard from '../components/ProjectCard';
-import { projects } from '../constants';
+import { getProjects } from 'lib/getProjects';
 
-const Home: NextPage = () => {
+interface Props {
+  projects: Project[];
+}
+const ProjectsPage: NextPage<Props> = ({ projects }) => {
   const sortedProjects = [...projects]
-    .sort((a, b) => b.date.valueOf() - a.date.valueOf())
-    .sort((a) => (a ? -1 : 1));
+    .sort(
+      (a, b) =>
+        new Date(a.startDate).valueOf() - new Date(b.startDate).valueOf()
+    )
+    .sort((a) => (a.isFeatured ? -1 : 1));
 
   return (
     <Container meta={{ title: 'Projects - Robert Renzo Rudio' }}>
@@ -40,4 +47,14 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export const getStaticProps: GetStaticProps = async () => {
+  const projects = await getProjects();
+  return {
+    props: {
+      projects,
+    },
+    revalidate: 3600 * 24, // one day.
+  };
+};
+
+export default ProjectsPage;

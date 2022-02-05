@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Action from './Action';
 import ProjectImage from './ProjectImage';
+import siteToIcon from '../lib/siteToIcon';
 
 interface MyImageProp {
   imgSrc: string;
@@ -46,7 +47,6 @@ interface FeaturedProjectCardProps {
   links: {
     link: string;
     linkName: string;
-    icon: (props: React.ComponentProps<'svg'>) => JSX.Element;
   }[];
 }
 
@@ -112,14 +112,17 @@ const FeaturedProjectCard = ({
             ))}
           </div>
           <div className="flex flex-row space-x-2">
-            {links.map(({ link, linkName, icon }) => (
-              <Action
-                key={linkName}
-                link={link}
-                linkName={linkName}
-                icon={icon}
-              />
-            ))}
+            {links.map(({ link, linkName }) => {
+              const icon = siteToIcon(linkName)!;
+              return (
+                <Action
+                  key={linkName}
+                  link={link}
+                  linkName={linkName}
+                  icon={icon}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
