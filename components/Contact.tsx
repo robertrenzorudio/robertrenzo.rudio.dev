@@ -119,11 +119,11 @@ const Contact = (props: Props) => {
                 <button
                   type="submit"
                   disabled={!(isValid && dirty)}
-                  className="border-2 border-orange-600 dark:border-indigo-300 w-full h-full p-2 "
+                  className="border-2 border-indigo-700 dark:border-orange-150 w-full h-full p-2 "
                 >
                   <span
                     hidden={isSubmitting}
-                    className="text-orange-600 dark:text-indigo-300 text-lg font-bold"
+                    className="text-indigo-700 dark:text-orange-150 text-lg font-bold"
                   >
                     Send
                   </span>
@@ -132,9 +132,9 @@ const Contact = (props: Props) => {
                       isSubmitting ? '' : 'hidden'
                     }`}
                   >
-                    <div className="w-3 h-3 bg-indigo-300/50 rounded-full animate-bounce"></div>
-                    <div className="w-3 h-3 bg-indigo-300/50 rounded-full animate-bounce"></div>
-                    <div className="w-3 h-3 bg-indigo-300/50 rounded-full animate-bounce"></div>
+                    <div className="w-3 h-3 bg-indigo-700/50 dark:bg-orange-150/50 rounded-full animate-bounce"></div>
+                    <div className="w-3 h-3 bg-indigo-700/50 dark:bg-orange-150/50 rounded-full animate-bounce"></div>
+                    <div className="w-3 h-3 bg-indigo-700/50 dark:bg-orange-150/50 rounded-full animate-bounce"></div>
                   </div>
                 </button>
               </div>
