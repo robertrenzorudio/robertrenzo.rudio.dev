@@ -26,7 +26,7 @@ const Nav = ({ isOpen, setIsOpen }: Props) => {
   const currTheme = theme === 'system' ? systemTheme : theme;
 
   return (
-    <nav className="w-full p-6 md:px-12 lg:px-0 lg:max-w-4xl 2xl:max-w-6xl mx-auto fixed top-0 inset-x-0 backdrop-blur-lg z-10">
+    <nav className="w-full p-6 md:px-12 lg:px-0 lg:max-w-4xl 2xl:max-w-6xl mx-auto fixed top-0 inset-x-0 z-10 bg-gray-100 dark:bg-gray-800">
       <div className="flex justify-between items-center">
         <button
           aria-label="Toggle Dark Mode"
