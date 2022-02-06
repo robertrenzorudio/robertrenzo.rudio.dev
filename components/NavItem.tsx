@@ -17,12 +17,12 @@ const NavItem: React.FC<Props> = ({ href, name }) => {
         <a
           href="#"
           className={cn(
-            'font-medium text-blue-1100 dark:text-indigo-100',
+            'underline-animation',
+            'text-blue-1100 dark:text-indigo-100',
             {
-              'underline underline-offset-8 decoration-2 decoration-indigo-700 dark:decoration-orange-500':
-                isActive,
+              'font-extrabold': isActive,
             },
-            'hidden md:inline-block hover:underline underline-offset-8 decoration-2 decoration-indigo-700 dark:decoration-orange-500'
+            'decoration-2 decoration-indigo-700 dark:decoration-orange-500'
           )}
         >
           {name}
