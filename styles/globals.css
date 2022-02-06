@@ -28,7 +28,6 @@
 
   .underline-animation:hover:after {
     transform: scaleX(1);
-    transform-origin: bottom left;
     @apply origin-bottom-left;
   }
 }
