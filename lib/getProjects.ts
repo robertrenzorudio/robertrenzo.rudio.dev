@@ -1,6 +1,6 @@
 import { prisma } from './prisma';
 import { Link, Project } from 'types/Project';
-import path from 'path';
+import urljoin from 'url-join';
 
 export const getProjects = async () => {
   const data = await prisma.project.findMany({
@@ -17,10 +17,15 @@ export const getProjects = async () => {
   });
 
   const projects = data.map((d) => {
+    if (d.imgName) {
+      console.log(
+        urljoin(process.env.NEXT_PUBLIC_PORTFOLIO_STATIC_URL!, d.imgName)
+      );
+    }
     return {
       ...d,
       imgSrc: d.imgName
-        ? path.join(process.env.NEXT_PUBLIC_PORTFOLIO_STATIC_URL!, d.imgName)
+        ? urljoin(process.env.NEXT_PUBLIC_PORTFOLIO_STATIC_URL!, d.imgName)
         : null,
       links: d.links as Link[],
       techStack: d.techStack.map((t) => t.name),
