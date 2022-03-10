@@ -17,11 +17,6 @@ export const getProjects = async () => {
   });
 
   const projects = data.map((d) => {
-    if (d.imgName) {
-      console.log(
-        urljoin(process.env.NEXT_PUBLIC_PORTFOLIO_STATIC_URL!, d.imgName)
-      );
-    }
     return {
       ...d,
       imgSrc: d.imgName
