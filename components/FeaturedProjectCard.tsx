@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import Action from './Action';
 import ProjectImage from './ProjectImage';
 import siteToIcon from '../lib/siteToIcon';
@@ -9,34 +8,6 @@ interface MyImageProp {
   alt: string;
   projLink: string;
 }
-const MyImage = ({ imgSrc, alt, projLink }: MyImageProp) => {
-  return (
-    <div
-      className={`md:w-[22rem] lg:w-[26rem] 2xl:w-[34rem] h-80 group relative`}
-    >
-      <Image
-        src={imgSrc}
-        layout="fill"
-        alt={alt}
-        className="group-hover:blur-sm "
-      />
-      <div className="absolute w-full h-full group-hover:visible invisible flex items-center justify-center">
-        <a
-          href={projLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-600 hover:text-gray-800 dark:hover:text-gray-400"
-        >
-          <button className="bg-indigo-700 dark:bg-orange-150 rounded-full h-24 w-24 font-semibold text-indigo-100 dark:text-gray-800">
-            View
-            <br />
-            Project
-          </button>
-        </a>
-      </div>
-    </div>
-  );
-};
 
 interface FeaturedProjectCardProps {
   align?: 'left' | 'right';
@@ -74,7 +45,7 @@ const FeaturedProjectCard = ({
               ({ linkName }) => linkName.toLocaleLowerCase() === 'website'
             )?.link || links[0].link
           }
-          w="md:w-[22rem] lg:w-[26rem] 2xl:[34rem]"
+          w="md:w-[22rem] lg:w-[30rem] 2xl:w-[36rem]"
           h="h-80"
         />
       </div>

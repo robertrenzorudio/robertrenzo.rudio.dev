@@ -6,7 +6,7 @@ interface Props {}
 
 const Skills = (props: Props) => {
   return (
-    <div className="flex flex-col mx-auto w-full px-6 md:px-12 lg:px-0 lg:max-w-3xl 2xl:max-w-5xl space-y-6">
+    <div className="flex flex-col mx-auto w-full px-6 md:px-12 lg:px-0 lg:max-w-4xl 2xl:max-w-6xl space-y-6">
       <h1 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-indigo-300">
         Skills
       </h1>
