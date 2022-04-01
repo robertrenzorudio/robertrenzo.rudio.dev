@@ -31,8 +31,7 @@ const Intro = (props: Props) => {
             UCLA
           </a>{' '}
           with a Bachelor&apos;s Degree in Computer Engineering (December 2021).
-          I am interested in full-stack, back-end, and embedded software
-          development.
+          I am interested in full-stack, back-end, and platform engineering.
         </p>
       </div>
     </div>
