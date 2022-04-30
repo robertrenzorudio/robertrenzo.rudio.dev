@@ -37,12 +37,12 @@ const Container: React.FC<Props> = ({ children, meta: cMeta }) => {
         <meta property="og:image" content={meta.image} />
         <meta
           name="theme-color"
-          content="#4338ca"
+          content="#f3f4f6"
           media="(prefers-color-scheme: light)"
         />
         <meta
           name="theme-color"
-          content="#ff9a63"
+          content="#1f2937"
           media="(prefers-color-scheme: dark)"
         />
       </Head>
